@@ -39,7 +39,7 @@ const toolTable=rows=>'<div class="tool-table"><table><thead><tr><th>Tool/Resour
 const guide=(label,title,intro,diagram,rows,note)=>'<div class="eyebrow">'+label+'</div><h1>'+title+'</h1><p class="lead">'+intro+'</p>'+heading('core-flow','Core workflow')+diagram+heading('used-tools','Tools and related resource')+toolTable(rows)+(note?'<div class="note">'+note+'</div>':'');
 pages.find(p=>p.id==='long-reads').body=()=>guide('Workflow guide 01','Per-genome SV discovery','Input: long reads, a matching reference and optional haplotype assemblies. Output: supported per-genome SVs.',
 flow('ASSEMBLY-SUPPORTED ROUTE',[['Haplotype assemblies','HGSVC / HPRC; UW-ONT dual assemblies'],['Discover alleles','PAV · SVIM-asm · dipcall'],['Combine evidence','Read-caller support · Truvari'],['Assess breakpoints','BoostSV']])+
-flow('READ-ONLY ROUTE · BI-ONT / UDN',[['ONT reads','minimap2 alignment'],['Discover SVs','cuteSV · Sniffles · DELLY · DeBreak'],['Retain supported calls','At least two callers'],['BI-ONT genotypes','PMDV phasing · Kanpig']]),[
+flow('READ-ONLY ROUTE · BI-ONT / UDN',[['ONT reads','minimap2 alignment'],['Discover SVs','cuteSV · Sniffles · DELLY · DeBreak'],['Retain supported calls','At least two callers'],['Phasing','PMDV · Kanpig (BI-ONT)']]),[
 ['minimap2 / pbmm2','Align ONT / HiFi reads to the matching reference.','Indexed read alignments',repo],
 ['PAV · SVIM-asm · dipcall','Discover alleles from genome assemblies.','Assembly-based SV calls; prioritize PAV representation',repo],
 ['Read-based callers','cuteSV, Sniffles, DELLY and DeBreak form the four-caller ONT route. Other study callers include pbsv, sawfish and NanoVar where applicable.','BI-ONT / UDN: retain ≥2-caller support',repo],
