@@ -1,0 +1,7 @@
+Figure 1. needLR workflow.
+Gustafson JA, Lin J, Zalusky MPG, Eichler EE, Miller DE. needLR: long-read structural variant annotation with population-scale frequency estimation. Bioinformatics 42(7), btag407 (2026).
+DOI: https://doi.org/10.1093/bioinformatics/btag407
+Source: https://academic.oup.com/bioinformatics/article/42/7/btag407/8709947
+Copyright: The Author(s) 2026. Published by Oxford University Press.
+License: Creative Commons Attribution 4.0 International, https://creativecommons.org/licenses/by/4.0/
+Changes: None. Image displayed responsively.

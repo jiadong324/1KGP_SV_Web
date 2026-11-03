@@ -775,6 +775,15 @@ rareSvRelatedPage.body = () => rareSvBeforeRelatedWorks()
  + '<figcaption>Figure reproduced unchanged from '+ext('https://www.nature.com/articles/s41467-026-68378-4/figures/1','Sui et al. (2026)')+', © The Author(s), under '+ext('https://creativecommons.org/licenses/by/4.0/','CC BY 4.0')+'.</figcaption></figure>'
  + '</article>';
 
+
+const rareSvBeforeNeedlrStudy = rareSvRelatedPage.body;
+rareSvRelatedPage.body = () => rareSvBeforeNeedlrStudy()
+ + '<article class="related-study needlr-study" id="needlr-related-work"><h3>'+ext('https://academic.oup.com/bioinformatics/article/42/7/btag407/8709947','needLR: long-read structural variant annotation with population-scale frequency estimation')+'</h3>'
+ + '<p class="study-citation">Gustafson, J. A., Lin, J., Zalusky, M. P. G., Eichler, E. E. and Miller, D. E. <em>Bioinformatics</em> 42(7), btag407 (2026).</p>'
+ + '<p>needLR combines query SV calls, a population-control VCF and a matching reference genome. It filters variants, merges query and control alleles, estimates ancestry-aware population frequencies, and adds genomic and gene–phenotype annotations. Annotated VCF and TSV outputs support rare-SV prioritization; the supplied control panel contains 500 1KGP-LRSC ONT genomes.</p>'
+ + '<figure class="related-study-figure"><a href="assets/needlr-2026-figure-1.jpeg" target="_blank" rel="noopener" aria-label="Open needLR Figure 1 at full size"><img src="assets/needlr-2026-figure-1.jpeg" width="520" height="164" loading="lazy" alt="needLR Figure 1: query VCF, pre-merged population VCF and reference genome enter four stages: BCFtools quality filtering, Truvari merging, ancestry-aware allele-frequency estimation, and BEDTools annotation; outputs are TSV and VCF."></a>'
+ + '<figcaption>Figure reproduced unchanged from '+ext('https://doi.org/10.1093/bioinformatics/btag407','Gustafson et al. (2026)')+', © The Author(s), under '+ext('https://creativecommons.org/licenses/by/4.0/','CC BY 4.0')+'.</figcaption></figure></article>';
+
 function renderNav() {
     const found = pages.filter(
         p => p.id !== 'large-effect');
