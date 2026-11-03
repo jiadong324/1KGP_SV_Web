@@ -17,3 +17,18 @@
 #navigation{margin-top:20px}.nav-group{display:flex;align-items:baseline;gap:9px;font-size:15px;font-weight:650;letter-spacing:.8px;color:#4f6655;margin:26px 8px 10px}.group-number{font:500 15px/1.5 monospace;color:#819475;flex-shrink:0}
 
 .workflow-branch-label{font-size:16px;font-weight:650;letter-spacing:1px;line-height:1.5}
+
+/* Clear stacked identity in the upper-left navigation. */
+.brand.brand-stacked{display:flex;flex-direction:column;align-items:flex-start;gap:0;letter-spacing:0;padding:0 8px 22px;border-bottom:1px solid var(--line)}.brand-stacked .brand-project{font-size:15px;font-weight:650;letter-spacing:2px;line-height:1.4;color:#6b805d;margin-bottom:7px}.brand-stacked .brand-title{font:normal 29px/1.2 Georgia,serif;letter-spacing:-.7px;color:var(--ink);white-space:nowrap}.brand-stacked .brand-title b{font-weight:700;color:var(--green)}.brand.brand-stacked small{font-size:10px;font-weight:500;letter-spacing:1.3px;line-height:1.5;margin-top:12px}
+
+.sidebar-bottom .developer-credit{font-size:12px;line-height:1.7;padding-bottom:13px;margin-bottom:12px;border-bottom:1px solid var(--line)}.developer-credit strong{color:#566d59;font-weight:600}
+
+/* Let the workflow introduction use the full content width without changing its font. */
+.lead.workflow-intro{max-width:none;width:100%;text-wrap:normal}
+
+.hosting-credit{display:inline-block;margin-top:7px;color:var(--muted);font-size:12px}.community-resource{margin-top:20px;padding-top:15px;border-top:1px solid var(--line);font-size:12px;line-height:1.8;color:var(--muted);font-style:normal}.community-resource a{display:inline-block;margin-top:5px;font-size:12px}
+
+.community-resource a{font-size:16px;font-weight:600;line-height:1.6}
+
+/* Divider above the developer and hosting credits. */
+.sidebar-bottom .developer-credit{border-bottom:0;border-top:1px solid var(--line);padding-top:13px;padding-bottom:0;margin-bottom:0}
