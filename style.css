@@ -32,3 +32,6 @@
 
 /* Divider above the developer and hosting credits. */
 .sidebar-bottom .developer-credit{border-bottom:0;border-top:1px solid var(--line);padding-top:13px;padding-bottom:0;margin-bottom:0}
+
+/* Related research and attributed figures. */
+.related-study{margin-top:20px}.related-study h3{font-size:19px;line-height:1.5}.study-citation,.study-links{font-size:14px}.related-study-figure{margin:28px 0 20px}.related-study-figure img{display:block;width:100%;max-width:715px;height:auto;margin:0 auto;border:1px solid var(--line);background:white}.related-study-figure figcaption{font-size:13px;line-height:1.75;color:var(--muted);margin-top:14px}

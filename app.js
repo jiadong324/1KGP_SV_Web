@@ -222,7 +222,7 @@ overview.body = () => '<div class="eyebrow">1000 Genomes Project · Long-read SV
     'Combine per-genome alleles into a nonredundant population catalog with callability-aware genotypes and allele frequencies.',
     'Truvari cross-sample integration · BoostSV representative selection · BCFtools') + '<div class="workflow-catalog"><b>Population INS/DEL catalogs</b><span>T2T-CHM13: 614,522 SVs &nbsp; · &nbsp; GRCh38: 587,779 SVs</span></div><div class="workflow-branch-label">APPLY THE RESOURCE TO NEW DATA</div><div class="workflow-branches"><div><div class="workflow-connector" aria-hidden="true">↓</div>' + stage(
     'rare-svs', '03A',
-    'Rare SV filtering',
+    'Enrich rare SV',
     'Compare newly discovered long-read SVs with the population catalog, then annotate and review rare candidates.',
     'Truvari comparison · rareSVpool · functional annotation · IGV') + '</div><div><div class="workflow-connector" aria-hidden="true">↓</div>' + stage(
     'targeted', '03B',
@@ -236,7 +236,7 @@ pages.find(
 pages.find(
     p => p.id === 'long-reads').group = 'WORKFLOW GUIDES';
 pages.find(
-    p => p.id === 'rare-svs').title = 'Rare SV filtering';
+    p => p.id === 'rare-svs').title = 'Enrich rare SV';
 pages.find(
     p => p.id === 'rare-svs').group = 'WORKFLOW GUIDES';
 const integration = {
@@ -344,7 +344,7 @@ pages.find(
 pages.find(
     p => p.id === 'rare-svs').body = () => guide(
     'Workflow guide 03A',
-    'Rare SV filtering',
+    'Enrich rare SV',
     'Input: new long-read SV calls and the matching population catalog. Output: rare candidates supported by read and functional evidence.',
     flow('POPULATION COMPARISON',
         [['New sample SVs', 'ONT discovery · ≥2-caller support'], ['Compare alleles', 'Truvari + GRCh38 population catalog'], ['Select rare candidates', 'rareSVpool · unique to one proband']]) +
@@ -549,7 +549,7 @@ overview.body = () => {
     html = html.replace(
         /<a class="workflow-stage" href="#rare-svs">[\s\S]*?<\/a>/,
         stage('rare-svs', '03A',
-            'Rare SV filtering',
+            'Enrich rare SV',
             'Identify likely pathogenic SVs in probands by using the population catalogs as controls.',
             'Proband SVs → population comparison → rare candidates → annotation and evidence review'));
     html = html.replace(
@@ -586,7 +586,7 @@ overview.body = () => {
         branchStart);
     const lanes = '<div class="application-lanes"><div class="application-lane"><div class="lane-caption">RARE DISEASE ANALYSIS</div>' + stage(
         'rare-svs', '03A',
-        'Rare SV filtering',
+        'Enrich rare SV',
         'Identify likely pathogenic SVs in probands by using the population catalogs as controls.',
         'Proband SVs → population comparison → rare candidates → annotation and evidence review') + '</div><div class="application-lane"><div class="lane-caption">BIOBANK ANALYSIS</div><div class="biobank-lane">' + stage(
         'large-effect', '03B',
@@ -761,6 +761,19 @@ buildAnalysis.body = () => {
         prepareStart) + html.slice(
         stagesStart);
 };
+
+
+// Related study: published family-based application of pangenome SV controls.
+const rareSvRelatedPage = pages.find(p => p.id === 'rare-svs');
+const rareSvBeforeRelatedWorks = rareSvRelatedPage.body;
+rareSvRelatedPage.body = () => rareSvBeforeRelatedWorks()
+ + heading('rare-related-works', 'Related works')
+ + '<article class="related-study"><h3>'+ext('https://doi.org/10.1038/s41467-026-68378-4','Using the linear references from the pangenome to discover missing autism variants')+'</h3>'
+ + '<p class="study-citation">Sui, Y., Lin, J., Noyes, M. D. et al. <em>Nature Communications</em> 17, 1681 (2026).</p>'
+ + '<p>The study analyzed 189 individuals from 51 unsolved families. Phased assemblies and complementary read-based calls enabled SV discovery; comparison with pangenome controls narrowed the search to rare family variants.</p>'
+ + '<figure class="related-study-figure"><a href="assets/sui-2026-figure-1.jpg" target="_blank" rel="noopener" aria-label="Open Figure 1 at full size"><img src="assets/sui-2026-figure-1.jpg" width="715" height="651" loading="lazy" alt="Figure 1 from Sui et al. Panel a shows family sequencing, hifiasm assembly, PAV discovery, read-based validation and population-control filtering. Panels b and c summarize read and assembly quality."></a>'
+ + '<figcaption>Figure reproduced unchanged from '+ext('https://www.nature.com/articles/s41467-026-68378-4/figures/1','Sui et al. (2026)')+', © The Author(s), under '+ext('https://creativecommons.org/licenses/by/4.0/','CC BY 4.0')+'.</figcaption></figure>'
+ + '</article>';
 
 function renderNav() {
     const found = pages.filter(

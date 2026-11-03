@@ -1,0 +1,7 @@
+Figure 1. Long-read sequencing and assembly.
+Sui Y, Lin J, Noyes MD et al. Using the linear references from the pangenome to discover missing autism variants. Nature Communications 17, 1681 (2026).
+DOI: https://doi.org/10.1038/s41467-026-68378-4
+Source image: https://cdn.ncbi.nlm.nih.gov/pmc/blobs/bb60/12909954/f827bbd88493/41467_2026_68378_Fig1_HTML.jpg
+Copyright: The Author(s) 2026.
+License: Creative Commons Attribution 4.0 International, https://creativecommons.org/licenses/by/4.0/
+Changes: None. Image displayed responsively.
